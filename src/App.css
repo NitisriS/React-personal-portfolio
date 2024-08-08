@@ -1,38 +1,40 @@
-.App {
-  text-align: center;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header ul li{
+    @apply px-2;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.bg-primary{
+    /* background: rgb(222,240,251);
+background: linear-gradient(90deg, rgba(222,240,251,1) 0%, rgba(250,253,255,1) 11%, rgba(255,255,255,1) 100%);
+*/
+background: white;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.bg-secondary{
+    /* background: rgb(222,240,251);
+    background: linear-gradient(90deg, rgba(222,240,251,1) 0%, rgba(250,253,255,1) 11%, rgba(255,255,255,1) 100%); */
+    background: rgb(167, 234, 243);
 }
-
-.App-link {
-  color: #61dafb;
+.mobile-nav{
+    @apply fixed top-10 left-0 bg-gray-400 w-full h-1/4;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.mobile-nav  li{
+    @apply w-full h-full text-center border-b-2;
+}
+/* .right-corner {
+    display: flex;
+    justify-content: right; 
+    height: 70vh; 
+    position: relative;
+    padding-right: 40px; 
+} */
+.project-descrp{
+    @apply absolute left-0 right-0 bottom-0 top-0 bg-secondary opacity-0 duration-500 hover:opacity-100
+}
+.btn{
+    @apply bg-secondary px-5 py-2 font-bold border-2 hover:border-gray-600 rounded
+}
+html{
+    scroll-behavior: smooth;
 }
