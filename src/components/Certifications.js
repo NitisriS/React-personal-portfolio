@@ -1,84 +1,83 @@
 import React from 'react';
-import Certificate1 from '../assets/certificate1.png';
-import Certificate2 from '../assets/certificate2.png';
-import Certificate3 from '../assets/certificate3.png';
-import Certificate4 from '../assets/certificate4.png';
-import Certificate5 from '../assets/certificate5.png';
+import { motion } from 'framer-motion';
+
+const certifications = [
+  {
+    id: 1,
+    title: 'Frontend Development',
+    description:
+      'Completed a one-month internship at Gateway Software Solutions, learnt  HTML, CSS, and JavaScript. Worked on projects that enhanced my skills in creating web applications.',
+  },
+  {
+    id: 2,
+    title: 'Text Classification with NLP',
+    description:
+      'Attended a one-day workshop at Karpagam College of Engineering, where I learned about NLP and machine learning. Completed a project on email classification as spam or not spam.',
+  },
+  {
+    id: 3,
+    title: 'Flutter Application Development',
+    description:
+      'Completed a 20-day course in Flutter at NS School Academy. Developed an "E-Library Management" app as a group project and gained valuable insights into mobile app development.',
+  },
+  {
+    id: 4,
+    title: 'The Joy of Computing - Python',
+    description:
+      'Completed an NPTEL course on Python, earning an elite certification with a score of 71%. Learned Python basics and solved weekly tasks to enhance problem-solving skills.',
+  },
+  {
+    id: 5,
+    title: 'Immersive Techniques of ARVR',
+    description:
+      'Completed a course on ARVR, where I learned to use 3ds Max, Substance Painter, and Unreal Engine tools for creating immersive experiences.',
+  },
+];
 
 export default function Certifications() {
-  // Sample certification data
-  const certifications = [
-    {
-      id: 1,
-      title: 'Frontend Development',
-      description:
-      "Completed a one-month internship at Gateway Software Solutions, learning HTML, CSS, and JavaScript. Worked on projects that enhanced my skills in creating responsive and user-friendly web applications, solidifying my frontend development expertise.",
-      image: Certificate1,
-      link: 'https://www.your-link.com/javascript-essentials', 
-    },
-    {
-      id: 2,
-      title: 'Text classification with NLP',
-      description:
-        'Attended a one-day workshop at Karpagam College of Engineering, where I learned about NLP and machine learning. Completed a project on email classification as spam or not spam.',
-      image: Certificate2,
-      link: 'https://www.your-link.com/react-developer', 
-    },
-    {
-      id: 3,
-      title: 'Flutter Application development',
-      description:
-        'Completed a 20-day course in Flutter at NS School Academy. Developed an "E-Library Management" app as a group project and gained valuable insights into mobile app development.',
-      image: Certificate3,
-      link: 'https://www.your-link.com/fullstack-web-dev', 
-    },
-    {
-      id: 4,
-      title: 'The Joy of Computing - Python',
-      description:
-        'Completed an NPTEL course on Python, earning an elite certification with a score of 71%. Learned Python basics and solved weekly tasks to enhance problem-solving skills.',
-      image: Certificate4,
-      link: 'https://www.your-link.com/ui-ux-design', 
-    },
-    {
-      id: 5,
-      title: 'Immersive Techniques of ARVR',
-      description:
-        'Completed a course on ARVR, where I learned to use 3ds Max, Substance Painter, and Unreal Engine tools for creating immersive experiences.',
-      image: Certificate5,
-      link: 'https://www.your-link.com/machine-learning-basics', // Replace with your actual link
-    },
-  ];
-
   return (
-    <section id="certifications" className="flex flex-col py-20 px-5 justify-center bg-primary text-black">
+    <section id="certifications" className="flex flex-col py-10 px-5 justify-center bg-primary text-black">
       <div className="w-full">
         <div className="flex justify-center">
           <h1 className="font-medium text-4xl border-b-4 border-black mb-10 text-black">
             Certifications
           </h1>
         </div>
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 px-10">
+        <motion.div
+          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 px-10"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                delay: 0.3,
+                staggerChildren: 0.3,
+              },
+            },
+          }}
+        >
           {certifications.map((cert) => (
-            <div key={cert.id} className="relative group overflow-hidden rounded-lg shadow-lg bg-white">
-              <img
-                src={cert.image}
-                alt={cert.title}
-                className="h-64 w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-                <h2 className="text-xl font-semibold text-white mb-3">{cert.title}</h2>
-                <p className="text-sm text-white px-5 mb-4">{cert.description}</p>
-                <a
-                  href={cert.link}
-                  className="inline-block bg-white text-black font-medium py-2 px-4 rounded-lg hover:bg-gray-200 transition-colors duration-300"
-                >
-                  View Certification
-                </a>
+            <motion.div
+              key={cert.id}
+              className="bg-white rounded-lg shadow-md p-5 flex flex-col justify-between border-l-4 border-black relative overflow-hidden group h-72"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
+              <div className="flex flex-col justify-between h-full">
+                <h2 className="text-xl font-semibold mb-3">{cert.title}</h2>
+                <p className="text-base text-gray-700 mb-4">{cert.description}</p>
               </div>
-            </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black opacity-20 group-hover:opacity-30 transition-opacity duration-300" />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

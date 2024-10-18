@@ -16,6 +16,6 @@ export default function Hero() {
             <a href="https://x.com/Nitisri_S" className='pr-4 hover:text-gray-600'><AiOutlineTwitter size={40}/></a>
             </div>
             </div>
-        <img className="md:w-1/3 " src = {HeroImg}/>
+        <img className="md:w-1/3 " src = {HeroImg} alt=""/>
     </section>
 }

@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 
 export default function Education() {
-  // Sample education data
   const educationDetails = [
     {
       id: 1,
@@ -30,7 +29,7 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="flex flex-col py-20 px-5 justify-center bg-primary text-black"
+      className="flex flex-col py-10 px-5 justify-center bg-primary text-black"
     >
       <div className="w-full">
         <div className="flex justify-center">
@@ -52,7 +51,7 @@ export default function Education() {
               y: 0,
               transition: {
                 delay: 0.3,
-                staggerChildren: 0.3, // Stagger the children animations
+                staggerChildren: 0.3,
               },
             },
           }}
@@ -63,7 +62,7 @@ export default function Education() {
               className="bg-white text-black rounded-lg shadow-lg p-6 flex flex-col items-center relative overflow-hidden"
               whileHover={{
                 scale: 1.05,
-                boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.3)", // Increase shadow on hover
+                boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.3)",
               }}
               variants={{
                 hidden: { opacity: 0, y: 20 },
@@ -72,13 +71,13 @@ export default function Education() {
             >
               <h2 className="text-2xl font-semibold mb-2">{edu.level}</h2>
               <p className="text-xl font-bold mb-2">
-                <span className="text-4xl text-yellow-500">{edu.percentage}</span>
+                <span className="text-4xl text-yellow-500">
+                  {edu.percentage}
+                </span>
               </p>
               <p className="text-md mb-1">{edu.institution}</p>
               <p className="text-sm text-gray-600">{edu.year}</p>
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-transparent to-black opacity-0 group-hover:opacity-30 transition-opacity duration-300"
-              />
+              <motion.div className="absolute inset-0 bg-gradient-to-br from-transparent to-black opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
             </motion.div>
           ))}
         </motion.div>

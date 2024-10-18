@@ -1,43 +1,3 @@
-// import Work1 from '../assets/work-1.jpg';
-// import Work2 from '../assets/work-2.jpg';
-// import Work3 from '../assets/work-3.jpg';
-
-// export default function Projects () {
-//     return <section id='projects' className="flex flex-col py-20 px-5 justify-center bg-primary text-black">
-//         <div className="w-1/2">
-//             <div className="flex justify-center">
-//                 <h1 className="font-medium text-4xl border-b-4 border-black mb-5 w-[140px] text-black">
-//                  Projects
-//                 </h1>
-//             </div>
-//         </div>
-//         <div className="w-full">
-//             <div className='flex flex-col md:flex-row px-10 gap-5'>
-//                 <div className='relative'>
-//                     <img className='h-[200px] w-[500px]' src={Work1} />
-//                     <div className='project-descrp'>
-//                         <p className='text-center py-5'>The "Temperature Controller for Home Automation" is an IoT-based project developed using the Arduino platform, designed to seamlessly regulate room temperature and optimize comfort at home. This is especially beneficial for individuals with disabilities.</p>
-//                     </div>
-//                 </div>
-//                 <div className='relative'>
-//                     <img className='h-[200px] w-[500px]'  src={Work2} />
-//                     <div className='project-descrp'>
-//                         <p className='text-center py-5'>Our "Rotten Grocery Prediction" project employs image processing and YOLO object detection to efficiently identify and classify fruits and vegetables. YOLO swiftly detects items within images, while a deep learning model evaluates their condition, categorizing them as "Rotten" or "Fresh." </p>
-//                     </div>
-//                 </div>
-//                 <div className='relative'>
-//                     <img className='h-[200px] w-[500px]'  src={Work3} />
-//                     <div className='project-descrp'>
-//                         <p className='text-center py-5'>The Personal Portfolio Website project showcases my professional and academic journey. Designed using HTML, CSS, and JavaScript, this website serves as a dynamic and interactive platform for presenting my personal and professional information to potential employers, clients, and collaborators.</p>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     </section>
-// }
-
-
-
 import React from 'react';
 import Work1 from '../assets/work-1.png';
 import Work2 from '../assets/work-2.png';
@@ -72,7 +32,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="flex flex-col py-20 px-5 justify-center bg-primary text-black">
+    <section id="projects" className="flex flex-col py-10 px-5 justify-center bg-primary text-black">
       <div className="w-full">
         <div className="flex justify-center">
           <h1 className="font-medium text-4xl border-b-4 border-black mb-10 text-black">

@@ -14,7 +14,7 @@ background: white;
 .bg-secondary{
     /* background: rgb(222,240,251);
     background: linear-gradient(90deg, rgba(222,240,251,1) 0%, rgba(250,253,255,1) 11%, rgba(255,255,255,1) 100%); */
-    background: rgb(167, 234, 243);
+    background: #a7eaf3;
 }
 .mobile-nav{
     @apply fixed top-10 left-0 bg-gray-400 w-full h-1/4;
